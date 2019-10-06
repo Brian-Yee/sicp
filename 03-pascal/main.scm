@@ -38,3 +38,24 @@
                (pascal diag (- anti-diag 1))
                )
         )))
+
+; Personal interest reducing symmetry to form fibonacci now.
+(define (fibonacci int)
+  (cond ((< int 2) 1)
+        (else (+
+               (fibonacci (- int 1))
+               (fibonacci (- int 2))
+               )
+        )))
+
+; 3-Dimensional Pascal's Traingle
+(define (3d-pascal i j k)
+  (cond ((= i 0) 1)
+        ((= j 0) 1)
+        ((= k 0) 1)
+        (else (+
+               (3d-pascal (- i 1) j k)
+               (3d-pascal i (- j 1) k)
+               (3d-pascal i j (- k 1))
+               )
+        )))
